@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="author" content="Nellie Tobey">
+    <meta name="description" content="A small game to help those who are unfamiliar with Linked Lists get a visual representation of how they work.">
+    <!-- Scripts, Javascript, CSS-->
+    <script type="text/javascript" src="LinkedListGame.js"></script>
+    <link rel="stylesheet" href="LinkedListGame.css" />
+    <!--- FONT AWESOME image icons-->
+    <script src="https://kit.fontawesome.com/b570a31fd0.js" crossorigin="anonymous"></script>
+    <!-- Google font-->
+
+    <title>Link the List!</title>
+</head>
+<body>
+    <header id="header">Link the List!</header>
+    <div class="flex-center-column"><button id="showInstructions" class="gamebutton-long"title="show the instructions for the game.">How to Play</button>
+         <div id="gamebuttons">
+                   <button id="play" class="gamebutton" title="press to start timer and game">PLAY</button>
+                   <button id="reload" class="gamebutton red" title="press to reload and reset game">RESET</button>
+         </div>
+    </div>
+    <div id="instructions" class="hidden">
+        <p>
+           The goal of the game is to put the nodes in order.
+           Future levels will remove some of the information from the nodes, and users will 
+           have to interpolate the locations without all the information about the nodes. 
+        </p>
+        <p>
+           The nodes are represented by the containers with a bug image in them.
+           In an actual node, the data inside isn't the address, or location in the list.
+           For visual representation though, I've addressed the nodes with the color of the bug.
+        </p>
+        <p>
+            Each node has a previous: the node that came before it, and a next: the node that comes after it.
+            A node that starts the list, or head, will have no previous link to a node it will say: None. A node that ends 
+            the list will have no next link to a node, so that will be labeled: None.
+        </p>
+        <p>
+            To finish early to get a better time score, press the DUMP button to see if your list is correct. 
+            The timer will stop early if you press the DUMP button, but you can't change any more nodes.
+        </p>
+        <button id="closeInstructions" class="gamebutton" title="close instructions box">CLOSE</button>
+    </div>
+    <main class="flex-center-column">
+
+        <div id="gamebody" >
+                            <div id="gamescreen" class="hidden">
+                                <h1>LEVEL 1</h1>
+                                <div id="game" class="gameboard">
+                                    <div class="flex-center-full" id="time"><h1 class="black" id="time_element_minutes">0</h1><h1 class="black">:</h1><h1 class="black" id="time_element_seconds">00</h1></div>
+                                    <div class="wrapper" id="NodeParent">
+                                        <div class="one NODE" id="node1" draggable="true" ondragstart="dragstart_handler(event);"><h3>previous: None</h3><i class="fas fa-bug red">RED</i><h3>next:blue</h3></div>
+                                        <div class="two NODE" id="node2" draggable="true" ondragstart="dragstart_handler(event);"><h3>previous: red</h3><i class="fas fa-bug blue">BLUE</i><h3>next:purple</h3></div>
+                                        <div class="three NODE" id="node3" draggable="true" ondragstart="dragstart_handler(event);"><h3>previous:blue</h3><i class="fas fa-bug purple">PURPLE</i><h3>next:orange</h3></div>
+
+                                        <div class="four NODE" id="node4" draggable="true" ondragstart="dragstart_handler(event);"><h3>previous:purple</h3><i class="fas fa-bug orange">ORANGE</i><h3>next:green</h3></div>
+                                        <div class="five NODE" id="node5" draggable="true" ondragstart="dragstart_handler(event);"><h3>previous:orange</h3><i class="fas fa-bug green">GREEN</i><h3>next:black</h3></div>
+                                        <div class="six NODE" id="node6" draggable="true" ondragstart="dragstart_handler(event);"><h3>previous:green</h3><i class="fas fa-bug black">BLACK</i><h3>next: None</h3></div>
+                                    </div>
+                                    <div class="flex-ends"><h2>HEAD:START</h2><h2>TAIL:END</h2></div>
+                                    <div class="wrapper2" id="target" ondrop="drop_handler(event);" ondragover="dragover_handler(event);">
+                                        <div class="head1 dropzone"></div>
+                                        <div class="head2 dropzone"></div>
+                                        <div class="head3 dropzone"></div>
+
+                                        <div class="tail1 dropzone"></div>
+                                        <div class="tail2 dropzone"></div>
+                                        <div class="tail3 dropzone"></div>
+                                    </div>
+                                </div>
+                                <div class="hidden" id="results">
+                                    <h2 id="gameover">GAMEOVER</h2>
+                                    <h3 id="score"></h3>
+                                </div>
+
+
+                                <button id="CHOMP" class="gamebutton" title="press this button to get the chompers moving early.">DUMP</button>
+                            </div>
+       
+        
+        </div>
+    </main>
+    
+
+</body>
+</html>
