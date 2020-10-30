@@ -175,11 +175,15 @@ function checkEMPTY() {
     if (divChild == undefined) {
         DOMELEM['isEMPTY'] = true   
         let button = document.getElementById('CHOMP')
+        let screen = DOMELEM['gamebody']
+        
         //element.classList.add("my-class");
         button.classList.add("rainbow")
         button.classList.add("grow")
         button.style.top = 'auto'
-        button.style.bottom = '12vh'
+        button.style.bottom = '20vh'
+        button.disabled = false
+        screen.style.height = "auto"
         
         //console.log("CHOMP updated")
 
