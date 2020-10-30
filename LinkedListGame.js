@@ -135,21 +135,23 @@ function createPlayerLIST() {
     // get retrieved list 
     // return false on error in comparing to DOMELEM WINLIST
     let elements = document.getElementsByClassName("NODE");
+    
    
     let original = DOMELEM['WINLIST']
     let size = original.length
   
     // when checking order, make sure the parent element is is='target'
     let WIN = true
+    
     for (i = 0; i < size; i++) {
         var playernodeID = elements[i]
         var playername = playernodeID.id
         var originalID = original[i]
-        if (playername != originalID) {
+        if (playername !== originalID) {
             WIN = false
             break
         }
-        //console.log(playername, originalID)
+        console.log(playername, originalID)
     }
     let message = document.getElementById('gameover')
         result = document.getElementById('results')
@@ -169,8 +171,20 @@ function createPlayerLIST() {
 
 function DUMP() {
     //console.log('DUMPING LISTS')
-    clearInterval(GAMEINTERVAL)
-    createPlayerLIST()
+    //let emptygrid = document.getElementById('NodeParent')
+    let divChild = document.getElementById("NodeParent").children[0];
+    //console.log('divChild = ', divChild)
+    if (divChild == undefined) {
+        clearInterval(GAMEINTERVAL)
+        createPlayerLIST()
+        
+    }
+    else {
+        message = "all Nodes have not been moved to the new list"
+        alert(message)
+       
+        
+    }
 }
 
 
