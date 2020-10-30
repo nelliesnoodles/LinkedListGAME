@@ -26,6 +26,7 @@ let DOMELEM = {
     'score': null,
     'activeGame': false,
     'WINLIST': [],
+    'isEMPTY': false,
 }
 
 //GAME TIMER
@@ -54,7 +55,7 @@ function setDOM() {
     DOMELEM['CHOMP'] = chompbutton
     DOMELEM['score'] = h3Score 
     dragone = document.getElementById('node1')
-    //console.log(DOMELEM)
+    
     // accessing these through DOMELEM results in null type
     playbutton.addEventListener('click', startGame)
     rules.addEventListener('click', showInstructions)
@@ -85,7 +86,7 @@ function drop_handler(ev) {
 }
 
 function reset() {
-    console.log('RESETTING')
+    
     location.reload();
     return false;
 }
@@ -100,7 +101,7 @@ function shuffle(arr) {
             arr[i] = arr[j];
             arr[j] = temp;
     }
-    console.log(arr)
+    
     return arr
     
 }
@@ -111,7 +112,7 @@ function shuffleNodes() {
     
     let assignedcolumns = []
     let nodelist = []
-    //console.log(NODES)
+    
     
     // In higher levels, the length will get bigger
     for (var i = range + 1; i > 0; i--) {
@@ -122,9 +123,9 @@ function shuffleNodes() {
         newcolumn = newcolumns[i]
         child = element[i];
         stored = child.id 
-        console.log(stored)
+       
         nodelist.push(stored)
-        //console.log(child)
+       
 
         child.style.gridColumn = newcolumn 
 
@@ -151,7 +152,7 @@ function createPlayerLIST() {
             WIN = false
             break
         }
-        console.log(playername, originalID)
+       
     }
     let message = document.getElementById('gameover')
         result = document.getElementById('results')
@@ -167,6 +168,24 @@ function createPlayerLIST() {
         message.innerHTML = "GAME OVER: TRY AGAIN!"
     }
     
+}
+function checkEMPTY() {
+    let divChild = document.getElementById("NodeParent").children[0];
+    
+    if (divChild == undefined) {
+        DOMELEM['isEMPTY'] = true   
+        let button = document.getElementById('CHOMP')
+        //element.classList.add("my-class");
+        button.classList.add("rainbow")
+        button.classList.add("grow")
+        button.style.top = 'auto'
+        button.style.bottom = '12vh'
+        
+        //console.log("CHOMP updated")
+
+    }
+    
+
 }
 
 function DUMP() {
@@ -215,6 +234,12 @@ function keepTIME() {
 
     time_element_minutes.innerHTML = MINUTES;
     time_element_seconds.innerHTML = SECONDS;
+
+    let finished = DOMELEM['isEMPTY']
+    
+    if ( finished == false) {
+        checkEMPTY()
+    }
     
     
 }

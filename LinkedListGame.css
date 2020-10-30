@@ -4,6 +4,11 @@
     padding: 0;
 }
 
+h1 {
+    margin: 0;
+    padding: 0;
+}
+
 header {
     display: flex;
     margin-bottom: 10px;
@@ -85,6 +90,18 @@ p {
     box-shadow: black 0px 0px 5px;
 }
 
+/* animation for DUMP button when active */
+.grow {
+    transform: scale(1.5);
+    bottom: 10vh;
+}
+
+.rainbow {
+    background-color: white;
+    color: black;
+    box-shadow: 1px 1px 2px red, 1px -1px 2px blue, -1px -1px yellow, -1px 1px 5px silver;
+}
+
 /* GRID FROM: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout */
 .wrapper {
     display: grid;
@@ -92,9 +109,11 @@ p {
     /*grid-template-columns: repeat(, 1fr); */
     grid-column: 1; 
     grid-row: 1;
+    grid-column-gap: 5px;
+    width: 90%;
     
     /* grid-auto-rows: minmax(12vh, auto); */
-    border: 2px solid aqua;
+    
 }
 .wrapper2 {
     display: grid;
@@ -103,10 +122,12 @@ p {
     grid-column: 1;
     grid-row: 1;
     /* grid-auto-rows: minmax(12vh, auto); */
-    border: 2px solid aqua;
+    border: 2px solid #6a1ca5;
 }
 
-
+.NODE {
+    box-shadow: 1px -1px 5px grey;
+}
 
 i {
     color: black;
