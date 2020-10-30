@@ -1,0 +1,270 @@
+﻿body
+{
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    margin-bottom: 10px;
+    color: white;
+    background: black;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 2em;
+    align-items: center;
+    height: 3ch;
+    text-shadow: 1px 1px 2px #91f1cd;
+    box-shadow: 0 0 9px black;
+}
+
+.hidden {
+    display: none;
+}
+
+
+.show {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background: black;
+    position: absolute;
+    color: white;
+    background-color: black;
+    z-index: 10;
+}
+
+p {
+    text-align: left;
+    padding: 2ch;
+    font-size: 1.5em;
+    margin-bottom: 1ch;
+    margin-top: 0;
+    color: #dcefef;
+    background-color: #495252;
+}
+
+.gamebutton {
+    height: 4ch;
+    padding: 1ch;
+    font-size: 1em;
+    background-color: lightcyan;
+    border-color: darkblue;
+    border-radius: 10%;
+    box-shadow: black 0px 0px 5px;
+    color: black;
+}
+
+.gamebutton-long {
+    display: flex;
+    align-self: center;
+    padding: 1ch;
+    padding-left: 2ch;
+    padding-right: 2ch;
+    font-size: 1em;
+    background-color: lightcyan;
+    border-color: darkblue;
+    border-radius: 10%;
+    box-shadow: black 0px 0px 5px;
+    color: black;
+}
+
+.gameboard {
+    width: 95vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f6f6f9;
+    border: 5px double silver;
+    box-shadow: black 0px 0px 5px;
+}
+
+/* GRID FROM: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout */
+.wrapper {
+    display: grid;
+   
+    /*grid-template-columns: repeat(, 1fr); */
+    grid-column: 1; 
+    grid-row: 1;
+    
+    /* grid-auto-rows: minmax(12vh, auto); */
+    border: 2px solid aqua;
+}
+.wrapper2 {
+    display: grid;
+    width: 100%;
+    /*grid-template-columns: repeat(, 1fr); */
+    grid-column: 1;
+    grid-row: 1;
+    /* grid-auto-rows: minmax(12vh, auto); */
+    border: 2px solid aqua;
+}
+
+
+
+i {
+    color: black;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+.head1 {
+    grid-column: 1;
+    grid-row: 1;
+    border: 1px solid black;
+}
+.head2 {
+    grid-column: 2;
+    grid-row: 1;
+    border: 1px solid black;
+}
+.head3 {
+    grid-column: 3;
+    grid-row: 1;
+    border: 1px solid black;
+
+}
+
+.tail1 {
+    grid-column: 4;
+    grid-row: 1;
+    border: 1px solid black;
+}
+
+.tail2 {
+    grid-column: 5;
+    grid-row: 1;
+    border: 1px solid black;
+}
+
+.tail3 {
+    grid-column: 6;
+    grid-row: 1;
+    border: 1px solid black;
+}
+
+.flex-ends {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-content: center;
+}
+h3, h2 {
+    color: black;
+}
+.red {
+    color: red;
+}
+.blue {
+    color: blue;
+}
+.purple {
+    color: purple;
+}
+.orange {
+    color: orange;
+}
+.green {
+    color: limegreen;
+}
+.black {
+    color: black;
+}
+
+.dropzone {
+   
+   height: 200px;
+    
+}
+
+
+.one {
+    grid-column: 1;
+    grid-row: 1;
+    border: inherit;
+    
+    
+}
+.two {
+    grid-column: 2;
+    grid-row: 1;
+    border: inherit;
+    
+   
+}
+
+.three {
+    grid-column: 3;
+    grid-row: 1;
+    border: inherit;
+   
+   
+}
+
+.four {
+    grid-column: 4;
+    grid-row: 1;
+    border: inherit;
+    
+  
+}
+
+.five {
+    grid-column: 5;
+    grid-row: 1;
+    border: inherit;
+   
+}
+
+.six {
+    grid-column: 6;
+    grid-row: 1;
+    border: inherit;
+    
+    
+}
+
+#gamescreen {
+    width: 100vw;
+}
+
+#gameover {
+    color: white;
+    text-shadow: 0px 0px 10px hotpink;
+}
+#CHOMP {
+    position: absolute;
+    z-index: 12;
+    bottom: 0;
+   
+}
+.flex-center {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
+.flex-center-column {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
+.flex-center-full {
+    position: static;
+    z-index: 2;
+    display: flex;
+    width: 100vw;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
+
