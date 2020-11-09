@@ -1,14 +1,10 @@
 // Linked List Game
 /* Author: Nellie Tobey
  * Purpose: To help people learn how linked lists work 
- * Game play: A set of chompers, or brackets will decend on each card move 
- * The goal of the player is to figure out where the cards belong.
- * The card will have either a NEXT, or PREVIOUS link identified on it.
- * The player must figure out how to link them all properly before the chompers get 
- * to their respective start/head and end/tail position. 
- * Once both chompers have reached thier positions, they will begin eating the nodes/cards.
- * If a card is out of position, or in the wrong part of the linked list, it's game over. 
- * Timer stops when they begin the chomp, and if the list is correctly ordered, a win. 
+ * Game play: Put the scrambled nodes back in order through 
+ * drag and drop UI. 
+ * When done, push the active 'DUMP' button to see if the order is correct.
+ * 
  */
 
 
